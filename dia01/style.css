@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center; /* centralizar na pagina os icons */
+  justify-content: center; /* centralizar na pagina os icons */
+}
+
+ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex; /* deixar os icons um ao lado do outro */
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  margin: 0 30px;
+  transform: rotate(-30deg) skew(25deg); /* rotate vai girar o icon no sentido anti horario, skew vai distorcer */
+  background-color: #ccc;
+}
+
+ul li span {
+  /* é o "texto" do icon, a sigla da rede social */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transition: 0.6s; /* muda a velocidade que as camadas vão subir quando estiver em hover */
+  display: flex !important; /* colocar o titulo do icon no meio do quadrado */
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px !important; /* fica do tamanho padrao se nao colocar o important */
+}
+
+ul li:hover span {
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* a partir daqui, vai mexer em cada camada de span, na sua transparencia e como ela vai deslizar, cara camada vai deslizar um pouco, sendo a ultima a que mais desliza */
+
+ul li:hover span:nth-child(5) {
+  transform: translate(
+    40px,
+    -40px
+  ); /* vai fazer a camada deslizar para cima, como se fosse deslizar de cartas, sentido horario ou anti horario */
+  opacity: 1;
+}
+
+ul li:hover span:nth-child(4) {
+  transform: translate(30px, -30px);
+  opacity: 0.8;
+}
+
+ul li:hover span:nth-child(3) {
+  transform: translate(20px, -20px);
+  opacity: 0.6;
+}
+
+ul li:hover span:nth-child(2) {
+  transform: translate(10px, -10px);
+  opacity: 0.4;
+}
+
+ul li:hover span:nth-child(1) {
+  transform: translate(0px, 0px); /* essa camada nao desliza pq é a "base" */
+  opacity: 0.2; /* mas fica mais transparente */
+}
+
+/* vai mudar as cores de cada icon (li) pra cor referente à sua visual */
+ul li:nth-child(1) span {
+  background: #3b5999;
+}
+
+ul li:nth-child(2) span {
+  background: #55acee;
+}
+
+ul li:nth-child(3) span {
+  background: #dd4b39;
+}
+
+ul li:nth-child(4) span {
+  background: #0077b5;
+}
+
+ul li:nth-child(5) span {
+  background: #e4405f;
+}
