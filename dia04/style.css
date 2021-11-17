@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #353b48;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  width: 200px;
+  height: 60px;
+  text-transform: uppercase;
+  font-family: 1.5em;
+  font-weight: 600;
+  background-color: #353b48;
+  color: #7bf2f7;
+  border: 3px dotted;
+  cursor: pointer;
+  position: relative;
+}
+
+/* before e after para fazer o chanfro na borda */
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 4px;
+  background-color: #353b48;
+  transform: skew(60deg);
+  transition: 0.3s ease-out;
+}
+
+/* determina a posição inicial dos chanfros */
+.btn::before {
+  top: -4px;
+  left: 85%;
+}
+
+.btn::after {
+  bottom: -4px;
+  right: 85%;
+}
+
+/* hover para fazer o chanfro "andar" ao longo da borda quando passar o mouse */
+.btn:hover::before {
+  left: 5%;
+}
+
+.btn:hover::after {
+  right: 5%;
+}
